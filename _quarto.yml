@@ -20,3 +20,12 @@ format:
     toc: true
     code-fold: true
     code-tools: true
+
+comments:
+  giscus:
+    repo: Working-Papers-in-Critical-Search/home
+    category: "Comments"
+    mapping: url
+    reactions-enabled: true
+    loading: lazy
+    input-position: top
