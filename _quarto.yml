@@ -1,0 +1,22 @@
+project:
+  type: website
+  output-dir: _site
+
+website:
+  title: "Working Paper"
+  navbar:
+    right:
+      - icon: github
+        href: https://github.com/Working-Papers-in-Critical-Search
+  page-footer:
+    left: |
+      Part of [Working Papers in Critical Search](https://working-papers-in-critical-search.github.io/home/)
+    right: |
+      [CC-BY 4.0](LICENSE)
+
+format:
+  html:
+    theme: cosmo
+    toc: true
+    code-fold: true
+    code-tools: true
