@@ -20,6 +20,8 @@ format:
     toc: true
     code-fold: true
     code-tools: true
+    include-after-body:
+      text: '<script src="https://hypothes.is/embed.js" async></script>'
 
 comments:
   giscus:
