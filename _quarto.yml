@@ -3,25 +3,32 @@ project:
   output-dir: _site
 
 website:
-  title: "Working Paper"
-  navbar:
-    right:
-      - icon: github
-        href: https://github.com/Working-Papers-in-Critical-Search
-  page-footer:
-    left: |
-      Part of [Working Papers in Critical Search](https://working-papers-in-critical-search.github.io/home/)
-    right: |
-      [CC-BY 4.0](LICENSE)
+  title: "Working Papers in Critical Search"
+  site-url: https://working-papers-in-critical-search.github.io/
+  # No Quarto navbar / page-footer — chrome injected via includes below
+  # to match the journal home site.
 
 format:
   html:
-    theme: cosmo
+    theme:
+      - cosmo
+      - _tokens.scss
+      - _custom.scss
+      - _paper.scss
     toc: true
     code-fold: true
     code-tools: true
+    anchor-sections: false
+    title-block-style: default
+    smooth-scroll: true
+    link-external-newwindow: true
+    include-in-header:
+      - _includes/fonts.html
+    include-before-body:
+      - _includes/topbar.html
     include-after-body:
-      text: '<script src="https://hypothes.is/embed.js" async></script>'
+      - _includes/footer.html
+      - text: '<script src="https://hypothes.is/embed.js" async></script>'
 
 comments:
   giscus:
@@ -31,3 +38,6 @@ comments:
     reactions-enabled: true
     loading: lazy
     input-position: top
+
+execute:
+  freeze: auto
