@@ -46,7 +46,14 @@ jobs:
           path: _site
 
   deploy:
-    if: (github.event_name == 'push' || github.event_name == 'workflow_dispatch') && github.ref == 'refs/heads/main'
+    # Skip deploy on the paper-template repo itself — the template is for
+    # cloning, not for hosting a live site, and Pages isn't enabled there.
+    # Authors who use "Use this template" get a different repo name, so
+    # this condition naturally permits deploys on their copies.
+    if: |
+      (github.event_name == 'push' || github.event_name == 'workflow_dispatch')
+      && github.ref == 'refs/heads/main'
+      && github.repository != 'Working-Papers-in-Critical-Search/paper-template'
     needs: build
     runs-on: ubuntu-latest
     environment:
